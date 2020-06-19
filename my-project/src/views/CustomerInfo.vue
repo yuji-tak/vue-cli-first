@@ -31,7 +31,7 @@
           <router-link to="/" tag="button" class="btn text-light bg-info border-0 rounded mr-5">
             前へ戻る
           </router-link>
-          <router-link to="/customer-questionnaire" @click.native="addInfo" tag="button" class="btn text-light bg-info border-0 rounded">
+          <router-link to="/customer-questionnaire" @click.native="addBasicInfo" tag="button" class="btn text-light bg-info border-0 rounded">
             次へ進む
           </router-link>
         </div>
@@ -81,24 +81,21 @@ export default {
       }
     },
     // 取得した値をvuexへ保存：sessionStorage
-    addInfo: function() {
+    addBasicInfo: function() {
       const info = {
         gender: this.gender,
         birthYear: this.selectedYear,
         birthMonth: this.selectedMonth,
         birthDay: this.selectedDay 
       };
-      this.$store.state.selectedInfo.push(info);
+      this.$store.commit('addAllInfo', info);
     },
-  },
-  computed: {
+    
   },
   created() {
     this.setYear(),
     this.setMonth(),
     this.setDay()
-  },
-  mounted() {
   }
 }
 </script>

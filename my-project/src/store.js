@@ -7,7 +7,9 @@ export default new Vuex.Store({
     state: {
         selectedInfo: [],
     },
-    getters: {
+    mutations: {
+        addAllInfo(state, info) {
+            state.selectedInfo.push(info);
+        }
     }
-
 });
