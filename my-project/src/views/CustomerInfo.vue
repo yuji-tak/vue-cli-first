@@ -88,9 +88,8 @@ export default {
         birthMonth: this.selectedMonth,
         birthDay: this.selectedDay 
       };
-      this.$store.commit('addAllInfo', info);
+      this.$store.commit('addBasicInfo', info);
     },
-    
   },
   created() {
     this.setYear(),

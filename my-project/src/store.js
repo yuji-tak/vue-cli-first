@@ -8,8 +8,14 @@ export default new Vuex.Store({
         selectedInfo: [],
     },
     mutations: {
-        addAllInfo(state, info) {
+        addBasicInfo(state, info) {
             state.selectedInfo.push(info);
+        },
+        addQuestionnaireInfo(state, info) {
+            state.selectedInfo.splice(1, 0, info);
+        },
+        addConsultationContent(state, info) {
+            state.selectedInfo.splice(2, 0, info);
         }
     }
 });
