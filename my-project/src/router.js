@@ -9,6 +9,8 @@ Vue.use(Router) // use：プラグインを適用する
 
 export default new Router({
     mode: 'history', // hashを取り除く
+    base: process.env.BASE_URL, // github公開用
+
     routes: [
         {
             path: '/customer-info',
